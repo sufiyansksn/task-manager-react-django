@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual environments
+Backend/env/
+Backend/venv/
+Backend/.venv/
+
+# Django
+media/
+staticfiles/
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/

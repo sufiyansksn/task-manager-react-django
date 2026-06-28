@@ -1,0 +1,84 @@
+.form-wrapper {
+    max-width: 600px;
+    margin: 50px auto 100px;
+    padding: 0 20px;
+}
+
+.glass-form {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* accent strip — blue marks this as the "edit" form */
+.glass-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--card-blue);
+}
+
+.glass-form h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--r-md);
+    padding: 16px 22px;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: 0.25s var(--ease);
+    box-sizing: border-box;
+    margin-bottom: 18px;
+}
+
+.form-textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--card-blue);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.submit-btn {
+    width: 100%;
+    background: white;
+    color: var(--card-text);
+    border: none;
+    padding: 17px;
+    border-radius: var(--r-pill);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s var(--ease);
+    margin-top: 4px;
+}
+
+.submit-btn:hover {
+    background: #e4e4e7;
+    transform: translateY(-2px);
+}
