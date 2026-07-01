@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 @csrf_exempt
 def create_list(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         
         body = json.loads(request.body)
 

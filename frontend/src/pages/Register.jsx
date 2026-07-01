@@ -1,33 +1,90 @@
 import Navbar from "../components/Navbar";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Register() {
+
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    function handleRegister() {
+        fetch('http://127.0.0.1:8000/accounts/register/',{
+
+            method: 'POST',
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+
+            if (data.message === "User Registered Successfully"){
+                navigate("login/")
+            }
+        });
+    }
+
+
     return (
         <>
         <Navbar />
 
         <div className="form-container">
-            <h2>Register</h2>
+            <div className="form-card">
 
-            <form>
-            <input
-                type="text"
-                placeholder="Username"
-            />
+                <h1 className="form-title">Register</h1>
 
-            <input
-                type="email"
-                placeholder="Email"
-            />
+                <lable className="form-lable">
+                    Username
+                </lable>
 
-            <input
-                type="password"
-                placeholder="Password"
-            />
+                <input
+                    className="form-input"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
 
-            <button>
-                Register
-            </button>
-            </form>
+                <lable className="form-lable">
+                    Email
+                </lable>
+
+                <input
+                    className="form-input"
+                    type="email"
+                    value={email}
+                    onChange ={(e) => setEmail(e.target.value)}
+                />
+
+                <lable className="form-lable">
+                    Password
+                </lable>
+
+                <input 
+                    className="form-input"
+                    type="password"
+                    value={password}
+                    onChange = {(e) => setPassword(e.target.value)}
+                />
+
+                <button 
+                    className="form-button"
+                    onClick={handleRegister}
+                >
+                    Register
+
+                </button>
+            </div>
         </div>
         </>
     );
