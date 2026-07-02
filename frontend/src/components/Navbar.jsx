@@ -1,22 +1,41 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
+  const token = localStorage.getItem("access")
+
+  function handleLogout(){
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+
+    navigate('/login');
+  }
+
   return (
+
+
     <nav className="navbar">
-      <h1>Task Manager</h1>
+        {token ? (
+      <>
+          <Link to="/create">Create Task</Link>
 
-      <div className="nav-links">
+          <button
+              className="logout-btn"
+              onClick={handleLogout}
+          >
+              Logout
+          </button>
+      </>
+      ) : (
+      <>
+          <Link to="/login">Login</Link>
 
-        <Link to="/">Home</Link>
-
-        <Link to="/login">Login</Link>
-
-        <Link to="/register">Register</Link>
-
-        <Link to="/create">Create Task</Link>
-        
-      </div>
+          <Link to="/register">Register</Link>
+      </>
+      )}
     </nav>
   );
 }

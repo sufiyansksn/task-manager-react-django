@@ -25,9 +25,16 @@ function Login() {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            if (data.message === "Login Successful") {
+            
+            if (data.access){
+                localStorage.setItem("access", data.access);
+                localStorage.setItem("refresh", data.refresh);
                 navigate("/");
             }
+            else{
+                alert(data.detail);
+            }
+            
         });
     }
 
@@ -40,7 +47,7 @@ function Login() {
 
                 <h1 className="form-title">Login</h1>
 
-                <label className="form-lable">
+                <label className="form-label">
                     Username
                 </label>
 
@@ -51,7 +58,7 @@ function Login() {
                 />
 
 
-                <label className="form-lable">
+                <label className="form-label">
                     Password
                 </label>
 
