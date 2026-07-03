@@ -1,66 +1,73 @@
-# 📝 Task Manager
+<div align="center">
 
-A full-stack Task Manager application built using **React.js**, **Django**, **PostgreSQL**, and **JWT Authentication**.
+# Task Manager
 
-## 🚀 Features
+A full-stack task management app with JWT authentication.
 
-- User Registration & Login
-- JWT Authentication
-- Create, Edit & Delete Tasks
-- Mark Tasks as Completed
-- Search Tasks
-- Protected Routes
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![JWT](https://img.shields.io/badge/Auth-JWT-black?style=flat&logo=jsonwebtokens)
+
+</div>
+
+---
+
+## Features
+
+- User registration & login (JWT authentication)
+- Create, edit & delete tasks
+- Mark tasks as completed
+- Search tasks
+- Protected routes
 - Responsive UI
 
-## 🛠 Tech Stack
+## Tech Stack
 
-**Frontend**
-- React.js
-- React Router
-- JavaScript
-- CSS
+| Frontend | Backend |
+|---|---|
+| React.js | Django |
+| React Router | PostgreSQL |
+| JavaScript | Django ORM |
+| CSS | Simple JWT |
+
+## Screenshots
+
+**Home Page**
+![Home Page](./screenshots/home.png)
+
+**Login Page**
+![Login Page](./screenshots/login.png)
+
+**Register Page**
+![Register Page](./screenshots/register.png)
+
+## Run Locally
 
 **Backend**
-- Django
-- PostgreSQL
-- Django ORM
-- Simple JWT
-
-## 📸 Screenshots
-
-### Home Page
-![Home](screenshots/home.png) 
- 
-### Login Page
-![Login](screenshots/login.png)
-
-### Register Page
-![Register](screenshots/register.png)
-
-## ▶️ Run Locally
-
-### Backend
-
 ```bash
 cd Backend
 python manage.py runserver
 ```
 
-### Frontend
-
+**Frontend**
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## 📌 Future Improvements
+## Future Improvements
 
 - Django REST Framework (DRF)
-- Backend JWT Protection
-- User-specific Tasks
-- Task Categories & Due Dates
+- Backend JWT protection
+- User-specific tasks
+- Task categories & due dates
 
 ---
 
-**Developed by Sk Sufiyan**
+<div align="center">
+
+Developed by Sk Sufiyan
+
+</div>
