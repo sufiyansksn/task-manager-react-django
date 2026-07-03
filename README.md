@@ -29,8 +29,8 @@ A full-stack Task Manager application built using **React.js**, **Django**, **Po
 ## 📸 Screenshots
 
 ### Home Page
-![Home](screenshots/home.png)
-
+![Home](screenshots/home.png) 
+ 
 ### Login Page
 ![Login](screenshots/login.png)
 
