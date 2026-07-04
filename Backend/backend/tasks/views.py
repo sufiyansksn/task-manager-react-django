@@ -3,6 +3,7 @@ from .models import Tasks
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+import traceback
 # Create your views here.
 
 
@@ -41,9 +42,6 @@ def delete_task(request, id):
         })
 
 
-from django.http import JsonResponse
-from .models import Tasks
-
 def tasks_list(request):
     try:
         tasks = Tasks.objects.all()
@@ -55,15 +53,38 @@ def tasks_list(request):
                 "id": task.id,
                 "title": task.titles,
                 "description": task.description,
-                "completed": task.completed,
+                "completed": task.completed
             })
 
         return JsonResponse(data, safe=False)
 
     except Exception as e:
+        print(traceback.format_exc())  
+
         return JsonResponse({
             "error": str(e)
         }, status=500)
+
+# def tasks_list(request):
+#     try:
+#         tasks = Tasks.objects.all()
+
+#         data = []
+
+#         for task in tasks:
+#             data.append({
+#                 "id": task.id,
+#                 "title": task.titles,
+#                 "description": task.description,
+#                 "completed": task.completed,
+#             })
+
+#         return JsonResponse(data, safe=False)
+
+#     except Exception as e:
+#         return JsonResponse({
+#             "error": str(e)
+#         }, status=500)
 
 # def tasks_list(request):
 #     tasks = Tasks.objects.all()
