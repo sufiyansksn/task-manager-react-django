@@ -14,7 +14,7 @@ function CreateTask() {
         // console.log(title)
         // console.log(description)
 
-        fetch("http://127.0.0.1:8000/tasks/create/",{
+        fetch("task-manager-react-django.onrender.com/tasks/create/",{
             method:'POST',
 
             headers: {

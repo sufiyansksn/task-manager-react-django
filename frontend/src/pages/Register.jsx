@@ -12,7 +12,7 @@ function Register() {
     const navigate = useNavigate();
 
     function handleRegister() {
-        fetch('http://127.0.0.1:8000/accounts/register/',{
+        fetch('task-manager-react-django.onrender.com/accounts/register/',{
 
             method: 'POST',
 

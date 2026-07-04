@@ -15,7 +15,7 @@ function EditTask(){
         // console.log(title)
         // console.log(description)
 
-        fetch(`http://127.0.0.1:8000/tasks/${id}`,{
+        fetch(`task-manager-react-django.onrender.com/tasks/${id}`,{
             method:'PUT',
 
             headers: {
@@ -32,7 +32,7 @@ function EditTask(){
 
     useEffect(() => {
 
-        fetch(`http://127.0.0.1:8000/tasks/${id}`)
+        fetch(`task-manager-react-django.onrender.com/tasks/${id}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);

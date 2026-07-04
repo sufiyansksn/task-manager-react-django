@@ -10,7 +10,7 @@ function Login() {
     const navigate = useNavigate();
 
     function handleLogin() {
-        fetch('http://127.0.0.1:8000/accounts/token/',{
+        fetch('http://task-manager-react-django.onrender.com/accounts/token/',{
 
             method: 'POST',
 

@@ -16,7 +16,7 @@ function Home() {
 
     function toggleComplete(id){
         console.log(id)
-        fetch(`http://127.0.0.1:8000/tasks/${id}/complete/`,{
+        fetch(`task-manager-react-django.onrender.com/tasks/${id}/complete/`,{
                 method: "PUT"
             })
             .then(response => response.json())
@@ -41,7 +41,7 @@ function Home() {
 
     function deleteTask(id) {
         fetch(
-            `http://127.0.0.1:8000/tasks/delete/${id}/`,
+            `http://task-manager-react-django.onrender.com/tasks/delete/${id}/`,
             {
                 method: "DELETE"
             }
@@ -55,7 +55,7 @@ function Home() {
     }   
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/tasks/")
+        fetch("https://task-manager-react-django.onrender.com/tasks/")
         .then(response => response.json())
         .then(data => { setTasks(data); });
     }, []);
